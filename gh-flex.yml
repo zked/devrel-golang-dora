@@ -20,14 +20,14 @@ integrations:
             - jobs>steps
           rename_keys:
             parent.0: "job"
-          timestamp_conversion:
-            job.created_at: TIMESTAMP::ISO8601
-            job.completed_at: TIMESTAMP::ISO8601
+          # timestamp_conversion:
+          #   job.created_at: TIMESTAMP::ISO8601
+          #   job.completed_at: TIMESTAMP::ISO8601
         - event_type: GHWorkFlowCommitsEvent
           url: "https://api.github.com/repos/${var:repo}/commits"
           rename_keys:
             commit.committer.date: timestamp
-          timestamp_conversion:
-            timestamp: TIMESTAMP::ISO8601
+          # timestamp_conversion:
+          #   timestamp: TIMESTAMP::ISO8601
         - event_type: GHWorkFlowDuration
           url: "https://api.github.com/repos/${var:repo}/actions/runs/${var:run_id}/timing"
