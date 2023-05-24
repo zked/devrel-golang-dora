@@ -32,7 +32,7 @@ func requestGames() {
 	client := http.Client{
 		Timeout: 5 * time.Second,
 	}
-	resp, err := client.Get("http://localhost:8080/games") // Replace with the appropriate endpoint URL
+	resp, err := client.Get("http://localhost:8081/games") // Replace with the appropriate endpoint URL
 	if err != nil {
 		log.Println("Request failed:", err)
 		return
@@ -53,7 +53,7 @@ func requestGamesRandomId() {
 	client := http.Client{
 		Timeout: 5 * time.Second,
 	}
-	resp, err := client.Get("http://localhost:8080/games/" + strconv.Itoa(randomNumber)) // Replace with the appropriate endpoint URL
+	resp, err := client.Get("http://localhost:8081/games/" + strconv.Itoa(randomNumber)) // Replace with the appropriate endpoint URL
 	if err != nil {
 		log.Println("Request failed:", err)
 		return
@@ -71,7 +71,7 @@ func requestGamesRandomId() {
 func waitForServer() {
 	retryInterval := 1 * time.Second
 	for {
-		_, err := http.Get("http://localhost:8080/games") // Replace with appropriate health endpoint URL
+		_, err := http.Get("http://localhost:8081/games") // Replace with appropriate health endpoint URL
 		if err == nil {
 			log.Println("Server is available")
 			return

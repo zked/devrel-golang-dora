@@ -62,7 +62,7 @@ func main() {
 	router.GET("/games/:id", getgameByID)
 	router.POST("/games", postgames)
 
-	router.Run("localhost:8080")
+	router.Run("localhost:8081")
 	// Wait for shut down to ensure data gets flushed
 	nrApp.Shutdown(5 * time.Second)
 }
