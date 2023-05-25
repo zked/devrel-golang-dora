@@ -36,6 +36,7 @@ var (
 	nrErr error
 )
 
+
 func main() {
 
 	nrApp, nrErr = newrelic.NewApplication(
