@@ -1,4 +1,4 @@
-git pull origin mainintegrations:
+integrations:
   - name: nri-flex
     interval: 30s
     config:
